@@ -1,0 +1,13 @@
+build:
+  commands:
+    - type: "sh"
+      command: './build.sh'
+      name: "Build"
+    - type: "sh"
+      command: './package.sh src/layers/shared'
+      name: "Package Shared Layer"
+test:
+  commands:
+    - type: "sh"
+      command: "./test.sh -o regression_tests.txt; exit $?"
+      name: "Regression Tests"
