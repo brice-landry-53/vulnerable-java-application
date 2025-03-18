@@ -31,7 +31,7 @@ public class MainController {
   @Autowired
   private FileService fileService;
 
-  @RequestMapping(method=RequestMethod.POST, value="/test-domain", consumes="application/json")
+  @RequestMapping(method=RequestMethod.POST, value="/test-domain-new", consumes="application/json")
   public ResponseEntity<String> testDomain(@RequestBody DomainTestRequest request) {
     log.info("Testing domain " + request.domainName);
     try {
