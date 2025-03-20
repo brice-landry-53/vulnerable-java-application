@@ -34,7 +34,7 @@ public class MainController {
   @RequestMapping(method=RequestMethod.POST, value="/test-domain-new", consumes="application/json")
   public ResponseEntity<String> testDomain(@RequestBody DomainTestRequest request) {
     log.info("Testing domain " + request.domainName);
-    if(!(request.domainName instanceof String)) {
+    if(!(request.domainName.matches("^[A-Za-z0-9]+$"))) {
       throw Exception("AHHH")
     }
     try {
